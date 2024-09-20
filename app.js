@@ -34,7 +34,7 @@ app.use(xss())
 app.use('/api/v1/authRouter', authRouter)
 app.use('/api/v1/jobsRouter', authenticateUser, jobsRouter)
 
-app.get('/api/status', (req, res) => {
+app.get('/api/v1/status', (req, res) => {
     res.json({ status: 'Server is Running' })
 })
 
