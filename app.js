@@ -34,6 +34,10 @@ app.use(xss())
 app.use('/api/v1/authRouter', authRouter)
 app.use('/api/v1/jobsRouter', authenticateUser, jobsRouter)
 
+app.get('/api/status', (req, res) => {
+    res.json({ status: 'Server is Running' })
+})
+
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
