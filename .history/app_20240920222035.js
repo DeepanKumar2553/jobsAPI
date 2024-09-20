@@ -5,7 +5,7 @@ const cors = require('cors')
 const xss = require('xss-clean')
 const rateLimiter = require('express-rate-limit')
 
-const express = require('express')
+
 const app = express()
 
 const authRouter = require('./routes/auth')
@@ -48,5 +48,5 @@ const start = async () => {
     }
 }
 
-//use 'npm start' to start the server
+//use 'npm start' to start
 start()
