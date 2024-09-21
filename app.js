@@ -34,7 +34,7 @@ const authenticateUser = require('./middleware/authentication')
 app.use('/api/v1/authRouter', app.use(express.json()), authRouter)
 app.use('/api/v1/jobsRouter', app.use(express.json()), authenticateUser, jobsRouter)
 
-app.get('/api/v1/status', (req, res) => {
+app.get('/api/v1/status', app.use(express.json()), (req, res) => {
     res.json({ status: 'Server is Running' })
 })
 
