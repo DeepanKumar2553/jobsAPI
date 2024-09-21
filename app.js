@@ -33,7 +33,7 @@ const authenticateUser = require('./middleware/authentication')
 // app.use(helmet())
 // app.use(cors())
 // app.use(xss())
-app.use(a)
+app.use(a);
 
 app.use('/api/v1/authRouter', authRouter)
 app.use('/api/v1/jobsRouter', authenticateUser, jobsRouter)
