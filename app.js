@@ -8,11 +8,11 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 
-const authRouter = require('./routes/auth')
-const jobsRouter = require('./routes/jobs')
-
 const port = process.env.PORT || 3000
 const connectDB = require('./db/connectDB')
+
+const authRouter = require('./routes/auth')
+const jobsRouter = require('./routes/jobs')
 
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
@@ -26,7 +26,6 @@ const authenticateUser = require('./middleware/authentication')
 //         max: 100
 //     })
 // )
-app.use(express.json())
 // app.use(helmet())
 // app.use(cors())
 // app.use(xss())
@@ -54,3 +53,5 @@ const start = async () => {
 
 //use 'npm start' to start
 start()
+
+app.use(express.json())
