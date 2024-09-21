@@ -5,7 +5,7 @@ const asyncWrapper = require('../middleware/asyncWrapper')
 
 const register = asyncWrapper(async (req, res) => {
     const user = await User.create({ ...req.body })
-    const token = user.createJWT()
+    const token = await user.createJWT()
     res.status(StatusCodes.CREATED).json({ user: { userName: user.userName, email: user.email }, token })
 })
 
