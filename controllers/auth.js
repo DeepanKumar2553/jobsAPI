@@ -4,7 +4,6 @@ const { BadRequestError, UnauthenticatedError } = require('../errors')
 const asyncWrapper = require('../middleware/asyncWrapper')
 
 const register = asyncWrapper(async (req, res) => {
-    console.log(req)
     const user = await User.create({ ...req.body })
     const token = await user.createJWT()
     res.status(StatusCodes.CREATED).json({ user: { userName: user.userName, email: user.email }, token })
