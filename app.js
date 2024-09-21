@@ -26,15 +26,15 @@ const authenticateUser = require('./middleware/authentication')
 //         max: 100
 //     })
 // )
-// app.use(express.json())
+app.use(express.json())
 // app.use(helmet())
 // app.use(cors())
 // app.use(xss())
 
-app.use('/api/v1/authRouter', app.use(express.json()), authRouter)
-app.use('/api/v1/jobsRouter', app.use(express.json()), authenticateUser, jobsRouter)
+app.use('/api/v1/authRouter', authRouter)
+app.use('/api/v1/jobsRouter', authenticateUser, jobsRouter)
 
-app.get('/api/v1/status', app.use(express.json()), (req, res) => {
+app.get('/api/v1/status', (req, res) => {
     res.json({ status: 'Server is Running' })
 })
 
