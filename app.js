@@ -54,5 +54,5 @@ const start = async () => {
     }
 }
 
-//use 'npm start' to start the server
+//use 'npm start' to start
 start()
