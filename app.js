@@ -4,7 +4,6 @@ require('dotenv').config()
 // const cors = require('cors')
 // const xss = require('xss-clean')
 // const rateLimiter = require('express-rate-limit')
-// const bodyParser = require('body-parser')
 
 const express = require('express')
 const app = express()
@@ -20,7 +19,6 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 
 const authenticateUser = require('./middleware/authentication')
 
-// app.use(bodyParser.json())
 // app.set('trust proxy', 1)
 // app.use(
 //     rateLimiter({
