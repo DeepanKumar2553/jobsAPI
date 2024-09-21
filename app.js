@@ -5,7 +5,6 @@ require('dotenv').config()
 // const xss = require('xss-clean')
 // const rateLimiter = require('express-rate-limit')
 // const bodyParser = require('body-parser')
-const a = require('./middleware/middleware')
 
 const express = require('express')
 const app = express()
@@ -29,11 +28,10 @@ const authenticateUser = require('./middleware/authentication')
 //         max: 100
 //     })
 // )
-// app.use(express.json())
+app.use(express.json())
 // app.use(helmet())
 // app.use(cors())
 // app.use(xss())
-app.use(a);
 
 app.use('/api/v1/authRouter', authRouter)
 app.use('/api/v1/jobsRouter', authenticateUser, jobsRouter)
