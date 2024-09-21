@@ -4,7 +4,11 @@
         {
             "src": "app.js",
             "use": "@vercel/node",
-            "functions": {}
+            "functions": {
+                "app.js": {
+                    "maxDuration": 60
+                }
+            }
         }
     ],
     "routes": [
