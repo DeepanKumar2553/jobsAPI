@@ -31,6 +31,7 @@ const authenticateUser = require('./middleware/authentication')
 app.use(bodyParser.json())
 app.use(helmet())
 app.use(cors())
+app.options('*', cors())
 app.use(xss())
 
 app.use('/api/v1/authRouter', authRouter)
