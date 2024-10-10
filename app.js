@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(helmet())
 app.use(cors({
-    origin: 'file:///E:/jobsAPI-frontend/public/index.html',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
