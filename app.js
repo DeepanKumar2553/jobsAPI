@@ -32,7 +32,7 @@ const authenticateUser = require('./middleware/authentication')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
 app.use(helmet())
-app.use(cors({ origin: '*' }))
+app.use(cors({ origin: 'http://localhost:3000/' }))
 app.use(xss())
 
 app.use('/api/v1/authRouter', authRouter)
